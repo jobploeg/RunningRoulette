@@ -6,13 +6,17 @@ interface ButtonTypes {
 interface ButtonProps {
   type: keyof ButtonTypes;
   className?: string;
+  onClick?: () => void;
   children: React.ReactNode;
 }
-export const Button = ({ type, className, children }: ButtonProps) => {
+export const Button = ({ type, className, onClick, children }: ButtonProps) => {
   if (type === "primary") {
     return (
       <button
-        className={`border border-1 border-black rounded p-2 hover:shadow-md bg-amber-400 ${className}`}
+        className={`border border-1 border-black rounded p-2 hover:shadow-md bg-amber-400 ${
+          className || ""
+        }`}
+        onClick={onClick}
       >
         {children}
       </button>
@@ -22,7 +26,10 @@ export const Button = ({ type, className, children }: ButtonProps) => {
   if (type === "clear") {
     return (
       <button
-        className={`border border-1 border-black rounded p-2 hover:shadow-md ${className}`}
+        className={`border border-1 border-black rounded p-2 hover:shadow-md ${
+          className || ""
+        }`}
+        onClick={onClick}
       >
         {children}
       </button>

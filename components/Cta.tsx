@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "./Button";
 import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
+import { GetRandomWorkout } from "./GetRandomWorkout";
 export default function Cta() {
   const words = [
     {
@@ -26,10 +27,8 @@ export default function Cta() {
         Running is simple, lets keep it that way!
       </p> */}
       <TypewriterEffectSmooth words={words} />
-      <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">
-        <Button type="primary" className="px-12 text-xl">
-          Generate a Workout
-        </Button>
+      <div className="flex flex-col md:flex-row mt-3 space-y-4 md:space-y-0 space-x-0 md:space-x-4">
+        <GetRandomWorkout />
         <Button type="clear" className="px-5 text-lg">
           More
         </Button>
