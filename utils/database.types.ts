@@ -58,6 +58,7 @@ export type Database = {
       }
       workouts: {
         Row: {
+          additional: string | null
           aim: string | null
           author: string | null
           category: number | null
@@ -69,8 +70,10 @@ export type Database = {
           likes: number | null
           recovery: string | null
           session: string | null
+          title: string | null
         }
         Insert: {
+          additional?: string | null
           aim?: string | null
           author?: string | null
           category?: number | null
@@ -82,8 +85,10 @@ export type Database = {
           likes?: number | null
           recovery?: string | null
           session?: string | null
+          title?: string | null
         }
         Update: {
+          additional?: string | null
           aim?: string | null
           author?: string | null
           category?: number | null
@@ -95,6 +100,7 @@ export type Database = {
           likes?: number | null
           recovery?: string | null
           session?: string | null
+          title?: string | null
         }
         Relationships: [
           {
@@ -217,3 +223,7 @@ export type Enums<
   : PublicEnumNameOrOptions extends keyof PublicSchema["Enums"]
     ? PublicSchema["Enums"][PublicEnumNameOrOptions]
     : never
+
+
+    // GENERATE WITH:
+      //npx supabase gen types typescript --linked --schema=public > utils/database.types.ts

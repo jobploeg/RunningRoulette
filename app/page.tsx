@@ -1,7 +1,7 @@
 import { Button } from "@/components/Button";
 import { CategoriesMovingCards } from "@/components/CategoriesMovingCards";
 import Cta from "@/components/Cta";
-import { GetRandomWorkout } from "@/components/GetRandomWorkout";
+import { GetRandomWorkout } from "@/components/randomWorkoutPopup/GetRandomWorkout";
 
 export default function Home() {
   return (

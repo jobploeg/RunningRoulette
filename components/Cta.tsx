@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "./Button";
 import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
-import { GetRandomWorkout } from "./GetRandomWorkout";
+import { GetRandomWorkout } from "./randomWorkoutPopup/GetRandomWorkout";
 export default function Cta() {
   const words = [
     {

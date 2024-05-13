@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ReactQueryClientProvider } from "../components/eactQueryClientProvider";
+import { ReactQueryClientProvider } from "../utils/reactQueryClientProvider";
 
 export const metadata: Metadata = {
   title: "RunninRoulette",

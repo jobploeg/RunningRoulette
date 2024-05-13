@@ -1,6 +1,7 @@
 interface ButtonTypes {
   primary: string;
   clear: string;
+  icon: string;
 }
 
 interface ButtonProps {
@@ -13,7 +14,7 @@ export const Button = ({ type, className, onClick, children }: ButtonProps) => {
   if (type === "primary") {
     return (
       <button
-        className={`border border-1 border-black rounded p-2 hover:shadow-md bg-amber-400 ${
+        className={`border border-1 border-black rounded p-2 hover:shadow-md bg-amber-400 h-min ${
           className || ""
         }`}
         onClick={onClick}
@@ -26,9 +27,20 @@ export const Button = ({ type, className, onClick, children }: ButtonProps) => {
   if (type === "clear") {
     return (
       <button
-        className={`border border-1 border-black rounded p-2 hover:shadow-md ${
+        className={`border border-1 border-black rounded p-2 hover:shadow-md h-min ${
           className || ""
         }`}
+        onClick={onClick}
+      >
+        {children}
+      </button>
+    );
+  }
+
+  if (type === "icon") {
+    return (
+      <button
+        className={`hover:scale-110 ${className || ""}`}
         onClick={onClick}
       >
         {children}
